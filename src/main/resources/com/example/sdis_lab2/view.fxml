@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.sdis_lab2.Controller">
+    <left>
+        <VBox prefHeight="1627.0" prefWidth="726.0" spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label text="Режим:" />
+            <ComboBox fx:id="modeSelector" />
+            <Label text="PostgreSQL SQL-скрипт (можна кілька команд через ';')" />
+            <TextArea fx:id="queryPostgres" prefHeight="101.0" prefRowCount="5" prefWidth="362.0" />
+            <Label text="MySQL SQL-скрипт (можна кілька команд через ';')" />
+            <TextArea fx:id="queryMySQL" prefHeight="106.0" prefRowCount="5" prefWidth="444.0" />
+            <Button onAction="#onExecuteClick" text="Виконати" />
+            <Label fx:id="executionTimeLabel" text="Час виконання: -" />
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="10">
+            <Label text="PostgreSQL Таблиця:" />
+            <TableView fx:id="postgresTable" />
+            <Label text="MySQL Таблиця:" />
+            <TableView fx:id="mysqlTable" />
+        </VBox>
+    </center>
+</BorderPane>
